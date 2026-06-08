@@ -7,14 +7,14 @@ export default function AppLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen bg-[#F3F4F6] p-4 font-sans text-slate-900 antialiased">
-      <div className="mx-auto flex min-h-[calc(100vh-32px)] max-w-[1680px] overflow-hidden rounded-[32px] border border-slate-200 bg-[#FCFCFA] shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+    <div className="min-h-screen bg-[#F7FAF4] text-[#07111F]">
+      <div className="flex min-h-screen">
         <AppSidebar />
 
-        <div className="flex min-w-0 flex-1 flex-col">
+        <div className="min-w-0 flex-1">
           <AppTopbar />
 
-          <main className="flex-1 overflow-x-hidden px-5 py-5 sm:px-6 lg:px-8">
+          <main className="min-h-[calc(100vh-88px)] px-5 pb-8 pt-4 sm:px-6 lg:px-6">
             {children}
           </main>
         </div>
