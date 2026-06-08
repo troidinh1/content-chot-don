@@ -31,12 +31,12 @@ export default function AppSidebar() {
   return (
     <aside className="hidden w-[280px] shrink-0 border-r border-slate-200 bg-[#F8FAF8] px-5 py-6 lg:flex lg:flex-col">
       <a href="/" className="flex items-center gap-3">
-        <div className="flex size-12 items-center justify-center rounded-2xl bg-emerald-600 text-white shadow-sm">
+        <div className="flex size-11 items-center justify-center rounded-2xl bg-emerald-600 text-white shadow-sm">
           <Sparkles className="size-5" />
         </div>
 
         <div>
-          <p className="text-lg font-bold leading-none tracking-tight text-slate-950">
+          <p className="text-base font-bold leading-none tracking-tight text-slate-950">
             Content Chốt Đơn
           </p>
           <p className="mt-1 text-xs font-medium text-slate-500">
@@ -47,11 +47,13 @@ export default function AppSidebar() {
 
       <div className="mt-6 rounded-[24px] border border-slate-200 bg-white p-3 shadow-sm">
         <div className="flex items-center gap-3">
-          <div className="flex size-11 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
+          <div className="flex size-10 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
             <Wand2 className="size-5" />
           </div>
           <div>
-            <p className="text-sm font-semibold text-slate-950">Starter Plan</p>
+            <p className="text-sm font-semibold text-slate-950">
+              Starter Plan
+            </p>
             <p className="text-xs font-medium text-slate-500">
               76 AI credits còn lại
             </p>
@@ -116,14 +118,13 @@ export default function AppSidebar() {
       </div>
 
       <div className="mt-auto rounded-[28px] bg-slate-950 p-4 text-white shadow-sm">
-        <div className="flex size-11 items-center justify-center rounded-2xl bg-white/10">
+        <div className="flex size-10 items-center justify-center rounded-2xl bg-white/10">
           <Sparkles className="size-5 text-emerald-200" />
         </div>
 
         <p className="mt-4 text-sm font-semibold">AI Copilot</p>
         <p className="mt-2 text-xs leading-5 text-white/65">
-          Tạo ngay kế hoạch nội dung 7 ngày đầu tiên cho người mới xây kênh bán
-          hàng.
+          Tạo nhanh kế hoạch nội dung 7 ngày cho kênh mới.
         </p>
 
         <a

@@ -8,7 +8,6 @@ import {
   Layers3,
   Lightbulb,
   MoreHorizontal,
-  Plus,
   Search,
   Sparkles,
   Target,
@@ -108,30 +107,30 @@ export default function DashboardPage() {
           <h2 className="text-3xl font-bold tracking-tight text-slate-950">
             Dashboard tổng quan
           </h2>
-          <p className="mt-2 text-sm leading-6 text-slate-500">
-            Đây là workspace giúp bạn quản lý kênh, sản phẩm, ý tưởng, script và
-            lịch nội dung một cách rõ ràng.
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
+            Quản lý kênh, sản phẩm, ý tưởng, script và lịch nội dung trong một
+            workspace rõ ràng.
           </p>
         </div>
 
         <div className="flex items-center gap-2">
-          <button className="rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700">
+          <button className="rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
             This month
           </button>
-          <button className="rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700">
+          <button className="rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
             Reset Data
           </button>
         </div>
       </section>
 
       <section className="grid gap-4 xl:grid-cols-3">
-        {overviewCards.map((card, index) => {
+        {overviewCards.map((card) => {
           const Icon = card.icon;
 
           return (
             <div
               key={card.title}
-              className={`rounded-[28px] border p-5 shadow-sm ${
+              className={`flex min-h-[220px] flex-col rounded-[28px] border p-5 shadow-sm ${
                 card.featured
                   ? "border-emerald-600 bg-emerald-600 text-white"
                   : "border-slate-200 bg-white text-slate-950"
@@ -148,33 +147,35 @@ export default function DashboardPage() {
                   <Icon className="size-5" />
                 </div>
 
-                <button
-                  className={`rounded-full px-2 py-1 text-xs font-semibold ${
+                <span
+                  className={`rounded-full px-2.5 py-1 text-xs font-semibold ${
                     card.featured
                       ? "bg-white/10 text-white/80"
                       : "bg-slate-100 text-slate-400"
                   }`}
                 >
                   V1
-                </button>
+                </span>
               </div>
 
-              <p className="mt-8 text-sm font-semibold opacity-90">
-                {card.title}
-              </p>
-              <p className="mt-2 text-4xl font-bold tracking-tight">
-                {card.value}
-              </p>
-              <p
-                className={`mt-2 text-sm ${
-                  card.featured ? "text-white/75" : "text-slate-500"
-                }`}
-              >
-                {card.subtitle}
-              </p>
+              <div className="mt-8">
+                <p className="text-sm font-semibold opacity-90">
+                  {card.title}
+                </p>
+                <p className="mt-2 text-3xl font-bold tracking-tight">
+                  {card.value}
+                </p>
+                <p
+                  className={`mt-2 text-sm ${
+                    card.featured ? "text-white/75" : "text-slate-500"
+                  }`}
+                >
+                  {card.subtitle}
+                </p>
+              </div>
 
               <div
-                className={`mt-8 flex items-center justify-between border-t pt-4 ${
+                className={`mt-auto flex items-center justify-between border-t pt-4 ${
                   card.featured ? "border-white/15" : "border-slate-200"
                 }`}
               >
@@ -204,7 +205,7 @@ export default function DashboardPage() {
               </h3>
             </div>
 
-            <button className="rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700">
+            <button className="rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
               + Add New
             </button>
           </div>
@@ -213,11 +214,11 @@ export default function DashboardPage() {
             {libraryItems.map((item) => (
               <div
                 key={item.title}
-                className="rounded-[22px] border border-slate-200 bg-slate-50 p-4"
+                className="rounded-[22px] border border-slate-200 bg-slate-50 p-4 transition hover:bg-white"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <p className="text-base font-semibold text-slate-950">
+                    <p className="text-sm font-semibold text-slate-950">
                       {item.title}
                     </p>
                     <p className="mt-2 text-xs leading-5 text-slate-500">
@@ -247,7 +248,7 @@ export default function DashboardPage() {
             </div>
 
             <div className="flex items-center gap-2">
-              <button className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600">
+              <button className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-50">
                 Monthly
               </button>
               <button className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white">
@@ -256,27 +257,27 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
-              <div className="mb-6">
+              <div className="mb-5">
                 <p className="text-sm font-semibold text-slate-400">
                   Tổng lượt hoạt động
                 </p>
-                <p className="mt-2 text-5xl font-bold tracking-tight text-slate-950">
+                <p className="mt-2 text-4xl font-bold tracking-tight text-slate-950">
                   342
                 </p>
               </div>
 
-              <div className="flex h-[260px] items-end gap-4 rounded-[24px] bg-[linear-gradient(to_right,rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:48px_48px] p-5">
+              <div className="flex h-[230px] items-end gap-4 rounded-[24px] bg-[linear-gradient(to_right,rgba(148,163,184,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.07)_1px,transparent_1px)] bg-[size:48px_48px] p-5">
                 {performanceBars.map((value, index) => (
                   <div key={index} className="flex flex-1 items-end">
                     <div
-                      className={`w-full rounded-t-[18px] ${
+                      className={`w-full rounded-t-[18px] transition ${
                         index === 2
                           ? "bg-gradient-to-t from-emerald-600 to-emerald-300"
                           : "bg-slate-200"
                       }`}
-                      style={{ height: `${value * 3.5}px` }}
+                      style={{ height: `${value * 3.1}px` }}
                     />
                   </div>
                 ))}
@@ -294,15 +295,14 @@ export default function DashboardPage() {
                 <p className="text-sm font-semibold text-slate-400">
                   Channel Score
                 </p>
-                <p className="mt-2 text-4xl font-bold tracking-tight text-slate-950">
+                <p className="mt-2 text-3xl font-bold tracking-tight text-slate-950">
                   82
                 </p>
                 <div className="mt-4 h-2 rounded-full bg-slate-200">
                   <div className="h-full w-[82%] rounded-full bg-emerald-600" />
                 </div>
                 <p className="mt-3 text-xs leading-5 text-slate-500">
-                  Hệ thống đánh giá kênh của bạn đã đủ nền tảng để đẩy nội dung
-                  đều.
+                  Kênh đã có nền tảng tốt để đẩy nội dung đều.
                 </p>
               </div>
 
@@ -314,8 +314,7 @@ export default function DashboardPage() {
                   </p>
                 </div>
                 <p className="mt-3 text-sm leading-7 text-slate-500">
-                  Tạo 5 video dạng “lỗi người mới” cho sản phẩm chính vì nhóm
-                  nội dung này dễ kéo comment và chốt đơn.
+                  Tạo 5 video dạng “lỗi người mới” cho sản phẩm chính.
                 </p>
                 <button className="mt-4 inline-flex items-center rounded-2xl bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white">
                   Tạo 5 ý tưởng
@@ -394,7 +393,7 @@ export default function DashboardPage() {
                 />
               </div>
 
-              <button className="rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700">
+              <button className="rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
                 Filter
               </button>
             </div>
@@ -426,8 +425,8 @@ export default function DashboardPage() {
                       item.status === "Completed" || item.status === "Done"
                         ? "bg-emerald-100 text-emerald-700"
                         : item.status === "Scheduled"
-                          ? "bg-sky-100 text-sky-700"
-                          : "bg-amber-100 text-amber-700"
+                        ? "bg-sky-100 text-sky-700"
+                        : "bg-amber-100 text-amber-700"
                     }`}
                   >
                     {item.status}
@@ -435,13 +434,6 @@ export default function DashboardPage() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="mt-5">
-            <button className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700">
-              <Plus className="size-4" />
-              Thêm hoạt động mới
-            </button>
           </div>
         </div>
       </section>
